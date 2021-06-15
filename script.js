@@ -7,10 +7,10 @@ let secondsDisplay = document.getElementById("seconds");
 let minutesDisplay = document.getElementById("minutes");
 let hoursDisplay = document.getElementById("hours");
 
-// interval variable
+// store interval variable
 let interval;
 
-// function runs inside setInterval
+// function that display and update timer details
 function displayTimer() {
   milliseconds += 10;
 
@@ -39,7 +39,7 @@ function displayTimer() {
       ? "0" + milliseconds
       : milliseconds;
 
-  // appends display
+  // update timer details
   msDisplay.innerHTML = ms;
   secondsDisplay.innerHTML = s;
   minutesDisplay.innerHTML = m;
@@ -59,7 +59,7 @@ document.getElementById("button-stop").addEventListener("click", () => {
 
 // implemented reset button
 document.getElementById("button-reset").addEventListener("click", () => {
-  // reset and reintialize every values
+  // reset and reintialize all values
   clearInterval(interval);
 
   [milliseconds, seconds, minutes, hours] = [000, 00, 00, 00];
